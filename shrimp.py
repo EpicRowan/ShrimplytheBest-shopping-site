@@ -54,7 +54,7 @@ def read_shrimp_from_file(filepath):
     return shrimp_types
 
 def get_by_id(shrimp_id):
-    """Return a shrimp, given its name."""
+    """Return a shrimp, given its id."""
 
     # This relies on access to the global dictionary `shrimp_types`
 
