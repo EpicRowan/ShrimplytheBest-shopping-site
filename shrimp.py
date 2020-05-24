@@ -53,3 +53,6 @@ def read_shrimp_from_file(filepath):
 
     return shrimp_types
 
+
+
+shrimp_types = read_shrimp_from_file("shrimp.txt")

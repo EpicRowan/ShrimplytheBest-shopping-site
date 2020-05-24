@@ -1,0 +1,3 @@
+Bloody Mary|5|'/static/img/bloody_mary.png'
+Blue Dream|5|'/static/img/dream.jpg'
+Red Rili|3|'/static/img/rili.jpg'
