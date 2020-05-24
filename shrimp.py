@@ -53,6 +53,12 @@ def read_shrimp_from_file(filepath):
 
     return shrimp_types
 
+def get_by_name(name):
+    """Return a shrimp, given its name."""
+
+    # This relies on access to the global dictionary `shrimp_types`
+
+    return shrimp_types[name]
 
 
 shrimp_types = read_shrimp_from_file("shrimp.txt")
