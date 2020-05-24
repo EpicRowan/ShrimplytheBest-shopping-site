@@ -20,3 +20,12 @@ def index():
     """Return homepage."""
 
     return render_template("homepage.html")
+
+
+@app.route("/shrimp")
+def list_shrimp():
+    """Return page showing all the melons ubermelon has to offer"""
+
+   shrimp_list = shrimp.get_all()
+    return render_template("all_shrimp.html",
+                           shrimp_list=shrimp_list)
