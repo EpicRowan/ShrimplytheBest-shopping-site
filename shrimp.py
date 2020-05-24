@@ -47,6 +47,12 @@ def read_shrimp_from_file(filepath):
 
 	return shrimp_types
 
+def get_all():
+    """Return list of shrimp"""
+
+    return list(shrimp_types.values())
+
+
 def get_by_id(shrimp_id):
     """Return a shrimp, given its id."""
 

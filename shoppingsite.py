@@ -36,10 +36,10 @@ def show_shrimp(shrimp_id):
     Show all info about a shrimp. Also, provide a button to buy that shrimp.
     """
 
-    shrimp = shrimp.get_by_id(shrimp_id)
-    print(shrimp)
+    shrimps = shrimp.get_by_id(shrimp_id)
+    print(shrimps)
     return render_template("shrimp_details.html",
-                           display_shrimp=shrimp)
+                           display_shrimp=shrimps)
 
 
 if __name__ == "__main__":
