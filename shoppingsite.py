@@ -24,8 +24,21 @@ def index():
 
 @app.route("/shrimp")
 def list_shrimp():
-    """Return page showing all the melons ubermelon has to offer"""
+    """Return page showing all shrimp for sale"""
 
    shrimp_list = shrimp.get_all()
     return render_template("all_shrimp.html",
                            shrimp_list=shrimp_list)
+
+@app.route("/shrimp/<shrimp_id>")
+def show_shrimp(shrimp_id):
+    """Return page showing the details of a given shrimp.
+
+    Show all info about a shrimp. Also, provide a button to buy that shrimp.
+    """
+
+    shrimp = shrimp.get_by_id(shrimp_id)
+    print(shrimp)
+    return render_template("shrimp_details.html",
+                           display_shrimp=shrimp)
+
