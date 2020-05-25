@@ -99,6 +99,44 @@ def add_to_cart(shrimp_id):
     # Redirect to shopping cart page
     return redirect("/cart")
 
+@app.route("/login", methods=["GET"])
+def show_login():
+    """Show login form."""
+
+    return render_template("login.html")
+
+ 
+@app.route('/login', methods=['POST'])
+def login_process():
+    """Process login."""
+
+    # Get form variables
+    email = request.form["email"]
+    password = request.form["password"]
+
+    user = user.get_by_email(email)
+
+    if not user:
+        flash("No such user", 'error')
+        return redirect("/login")
+
+    if user.password != password:
+        flash("Incorrect password", 'error')
+        return redirect("/login")
+
+    session["user_id"] = user.user_id
+
+    flash("Logged in")
+    return redirect(f"/users/{user.user_id}")
+
+
+@app.route("/checkout")
+def checkout():
+  
+    flash("Sorry! Checkout will be implemented in a future version.")
+    return redirect("/melons")
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
