@@ -41,6 +41,34 @@ def show_shrimp(shrimp_id):
     return render_template("shrimp_details.html",
                            display_shrimp=shrimps)
 
+@app.route("/cart")
+def show_shopping_cart():
+    """Display content of shopping cart."""
+
+	order_total = 0
+
+	cart_shrimp = []
+
+	cart = session.get("cart", {})
+
+	for shrimp_id, quantity in cart.items():
+
+  		shrimp = shrimp.get_by_id(shrimp_id)
+  		cost = shrimp.price
+  		order_total += cost
+
+		total_cost = quantity * shrimp.price
+		order_total += total_cost
+
+		shrimp.quantity = quantity
+		shrimp.total_cost = total_cost
+
+		cart_shrimp.append(shrimp)
+
+    return render_template("cart.html",
+							cart=cart_shrimp,
+							order_total=order_total)
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
