@@ -18,7 +18,7 @@ class Shrimp(object):
 		self.shrimp_id = shrimp_id
 		self.name = name
 		self.price = price
-		self.image_url  = image_url
+		self.image_url = image_url
 
 	def __repr__(self):
 		"""Convenience method to show information about shrmp in console."""
