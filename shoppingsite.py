@@ -69,6 +69,36 @@ def show_shopping_cart():
 							cart=cart_shrimp,
 							order_total=order_total)
 
+@app.route("/add_to_cart/<shrimp_id>")
+def add_to_cart(shrimp_id):
+    """Add shrimp to cart and redirect to shopping cart page.
+
+    When a shrimp is added to the cart, redirect browser to the shopping cart
+    page and display a confirmation message: 'Successfully added to
+    cart'."""
+
+    # Check if we have a cart in the session and if not, add one
+    # Also, bind the cart to the name 'cart' for easy reference below
+    if 'cart' in session:
+        cart = session['cart']
+    else:
+        cart = session['cart'] = {}
+
+    # We could also do this with setdefault:
+    # cart = session.setdefault("cart", {})
+
+    cart[shrimp_id] = cart.get(shrimp_id, 0) + 1
+
+    # Print cart to the terminal for testing purposes
+    # print("cart:")
+    # print(cart)
+
+    # Show user success message on next page load
+    flash("Successfully added to cart.")
+
+    # Redirect to shopping cart page
+    return redirect("/cart")
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
