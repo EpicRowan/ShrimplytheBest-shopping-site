@@ -11,44 +11,41 @@ class User(object):
 		self.password = password
 
 	def __repr__(self):
-		"""Convenience method to show information about shrmp in console."""
-		return "<Shrimp: {}, {}, {}>".format(self.shrimp_id, self.name, self.price_str())
+		"""Convenience method to show information about user in console."""
+		return "<User: {}, {}, {}>".format(self.user_id, self.email)
 
-def read_shrimp_from_file(filepath):
-	"""Read shrimp type data and populate dictionary.
+def read_user_from_file(filepath):
+	"""Read user data and populate dictionary.
 
-	Dictionary will be {id: Shrimp object}
+	Dictionary will be {id: User object}
 	"""
 
-	shrimp_types = {}
+	users = {}
 
 	with open(filepath) as file:
 		for line in file:
-			(shrimp_id,
-			name,
-			price,
-			image_url,
+			(user_id,
+			email,
+			password,
 			) = line.strip().split("|")
-
-			price = float(price)
     
     
-			shrimp_types[shrimp_id] = Shrimp(shrimp_id, name, price, image_url)
+			users[user_id] = User(user_id, email, password)
 
-	return shrimp_types
+	return users
 
-def get_all():
-    """Return list of shrimp"""
+def get_all_users():
+    """Return list of users"""
 
-    return list(shrimp_types.values())
+    return list(users.values())
 
 
-def get_by_id(shrimp_id):
+def get_user_by_id(user_id):
     """Return a shrimp, given its id."""
 
     # This relies on access to the global dictionary `shrimp_types`
 
-    return shrimp_types[shrimp_id]
+    return users[user_id]
 
 
-shrimp_types = read_shrimp_from_file("shrimp.txt")
+users = read_user_from_file("users.txt")
