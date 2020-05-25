@@ -43,7 +43,7 @@ def show_shrimp(shrimp_id):
 
 @app.route("/cart")
 def show_shopping_cart():
-    """Display content of shopping cart."""
+	"""Display content of shopping cart."""
 
 	order_total = 0
 
@@ -53,9 +53,9 @@ def show_shopping_cart():
 
 	for shrimp_id, quantity in cart.items():
 
-  		shrimp = shrimp.get_by_id(shrimp_id)
-  		cost = shrimp.price
-  		order_total += cost
+		shrimp = shrimp.get_by_id(shrimp_id)
+		cost = shrimp.price
+		order_total += cost
 
 		total_cost = quantity * shrimp.price
 		order_total += total_cost
@@ -65,7 +65,7 @@ def show_shopping_cart():
 
 		cart_shrimp.append(shrimp)
 
-    return render_template("cart.html",
+	return render_template("cart.html",
 							cart=cart_shrimp,
 							order_total=order_total)
 
