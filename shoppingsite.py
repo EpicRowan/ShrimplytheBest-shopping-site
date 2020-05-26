@@ -95,8 +95,8 @@ def add_to_cart(shrimp_id):
     cart[shrimp_id] = cart.get(shrimp_id, 0) + 1
 
     # Print cart to the terminal for testing purposes
-    # print("cart:")
-    # print(cart)
+    print("cart:")
+    print(cart)
 
     # Show user success message on next page load
     flash("Successfully added to cart.")
