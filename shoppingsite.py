@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, flash,
+from flask import Flask, render_template, redirect, flash, session
 import jinja2
 
 import shrimp
@@ -53,14 +53,14 @@ def show_shopping_cart():
 
 	for shrimp_id, quantity in cart.items():
 
-		shrimp = shrimp.get_by_id(shrimp_id)
-		cost = shrimp.price
+		shrimps = shrimp.get_by_id(shrimp_id)
+		cost = shrimps.price
 		order_total += cost
 
-		total_cost = quantity * shrimp.price
+		total_cost = quantity * shrimps.price
 		order_total += total_cost
 
-		shrimp.quantity = quantity
+		shrimps.quantity = quantity
 		shrimp.total_cost = total_cost
 
 		cart_shrimp.append(shrimp)
