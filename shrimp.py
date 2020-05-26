@@ -22,7 +22,7 @@ class Shrimp(object):
 
 	def __repr__(self):
 		"""Convenience method to show information about shrmp in console."""
-		return "<Shrimp: {}, {}, {}>".format(self.shrimp_id, self.name, self.price_str())
+		return "<Shrimp: {}, {}, {}>".format(self.shrimp_id, self.name, self.price)
 
 def read_shrimp_from_file(filepath):
 	"""Read shrimp type data and populate dictionary.

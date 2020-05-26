@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, flash
+from flask import Flask, render_template, redirect, flash,
 import jinja2
 
 import shrimp
