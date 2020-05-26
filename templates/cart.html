@@ -15,15 +15,15 @@
         <tr>
             {% for shrimp in cart %}
             <td>{{ shrimp.name }}</td>
-            <td></td>
+            <td>{{ quantity }}</td>
             <td>{{ shrimp.price }}</td>
-            <td></td>
+            <td>{{total_cost }}</td>
             {% endfor %}
         </tr>
         </tbody>
     </table>
 
-    <h3>Total: </h3>
+    <h3>Total: {{order_total }}</h3>
 
     <a href="/checkout" class="btn btn-large btn-primary">Check Out</a>
 

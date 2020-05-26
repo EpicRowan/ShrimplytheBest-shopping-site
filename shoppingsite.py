@@ -70,7 +70,9 @@ def show_shopping_cart():
 	return render_template("cart.html",
 							cart=cart_shrimp,
 							order_total=order_total,
-							shrimps=shrimps)
+							shrimps=shrimps,
+							quantity = quantity,
+							total_cost =total_cost)
 
 @app.route("/add_to_cart/<shrimp_id>")
 def add_to_cart(shrimp_id):
