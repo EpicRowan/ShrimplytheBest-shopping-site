@@ -63,11 +63,14 @@ def show_shopping_cart():
 		shrimps.quantity = quantity
 		shrimp.total_cost = total_cost
 
-		cart_shrimp.append(shrimp)
+		cart_shrimp.append(shrimps)
 
+
+	print(cart)
 	return render_template("cart.html",
 							cart=cart_shrimp,
-							order_total=order_total)
+							order_total=order_total,
+							shrimps=shrimps)
 
 @app.route("/add_to_cart/<shrimp_id>")
 def add_to_cart(shrimp_id):
