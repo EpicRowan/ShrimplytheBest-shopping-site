@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <h2>All shrimp</h2>
 
     <div id="shrimp-list" class="row">
       {% for shrimp in shrimp_list %}
@@ -8,8 +9,8 @@
 
               <div class="well">
                   <h3><a href="/shrimp/{{ shrimp.shrimp_id }}">{{ shrimp.name }}</a></h3>
-                  <a href="/shrimp/{{ shrimp.shrimp_id  }}">
-                      <img src="{{ shrimp.image_url }}">
+                  <a href="/shrimp/{{ shrimp.shrimp_id }}">
+                      <div class="pic"><img src="{{ shrimp.image_url  }}"></div>
                   </a>
 
                   <div class="price">{{ shrimp.price }}</div>

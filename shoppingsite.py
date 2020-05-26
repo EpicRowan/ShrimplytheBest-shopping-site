@@ -70,7 +70,7 @@ def show_shopping_cart():
 	return render_template("cart.html",
 							cart=cart_shrimp,
 							order_total=order_total,
-							shrimps=shrimps,
+							shrimp=shrimp,
 							quantity = quantity,
 							total_cost =total_cost)
 
@@ -139,7 +139,7 @@ def login_process():
 def checkout():
   
     flash("Sorry! Checkout will be implemented in a future version.")
-    return redirect("/melons")
+    return redirect("/shrimp")
 
 
 

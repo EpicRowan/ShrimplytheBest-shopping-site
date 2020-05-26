@@ -1,7 +1,4 @@
-/* Style for Ubermelon Shopping Site */
 
-
-/* Style our Ubermelon logo. */
 
 div.navbar-header img {
     width: 30px;
@@ -10,8 +7,31 @@ div.navbar-header img {
     margin-right: 7px;
 }
 
+img.melon-cart {
+    height: 15px;
+}
 
-/* melon-detail-page */
+
+img.shrimp-list {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+div.pic img {
+    border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+div.melon-summary .price {
+    margin: 0.5em 0;
+    font-size: 150%;
+    font-weight: bold;
+}
+
 
 .warning {
     color: red;
