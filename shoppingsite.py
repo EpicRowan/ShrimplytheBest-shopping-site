@@ -3,8 +3,6 @@ import jinja2
 
 import shrimp
 
-# from model import User, Shrimp, connect_to_db, db
-
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)

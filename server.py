@@ -1,20 +1,14 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from jinja2 import StrictUndefined
 
+from flask import Flask, render_template, redirect, request, flash, session
 
-db = SQLAlchemy()
+from flask_debugtoolbar import DebugToolbarExtension
+
+from model import User, Date, Meal, connect_to_db, db
+
 
 app = Flask(__name__)
 
-app.secret_key = "SECRET"
+app.secret_key = "supersecret"
 
-
-def connect_to_db(app, db_name):
-    """Connect to database."""
-
-    app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql:///{shrimplythebest}"
-    app.config["SQLALCHEMY_ECHO"] = True
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-    db.app = app
-    db.init_app(app)
+app.jinja_env.undefined = StrictUndefined
