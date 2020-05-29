@@ -2,7 +2,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+# Model Definitions
 
+class User(db.model):
+
+    __tablename__ = "users"
+
+    user_id = db.Column(db.Integer, autoincrement = True, primarykey=True)
 
 def connect_to_db(app):
     """Connect the database to our Flask app."""
