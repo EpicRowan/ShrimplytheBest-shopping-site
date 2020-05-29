@@ -15,6 +15,17 @@ class User(db.model):
     def __repr__(self):
         return(f"Id: {self.user_id} email: {self.email}")
 
+class Shrimp(db.model):
+
+    __tablename__ = "shrimps"
+
+    shrimp_id = db.Column(db.String(), primarykey = True)
+    name = db. Column(db.String(64))
+    price = db.Column(db.Integer)
+
+    def __repr__(self):
+        return(f"Id: {self.shrimps_id} Name: {self.name}")
+
 
 def connect_to_db(app):
     """Connect the database to our Flask app."""
