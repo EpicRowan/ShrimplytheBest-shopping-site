@@ -13,7 +13,7 @@ class User(db.model):
     password = db.Column(db.String(64), nullable = True)
 
     def __repr__(self):
-        return(f"Id: {self.user_id} email: {self.email}")
+        return(f"<Id: {self.user_id} email: {self.email}>")
 
 class Shrimp(db.model):
 
@@ -24,7 +24,7 @@ class Shrimp(db.model):
     price = db.Column(db.Integer)
 
     def __repr__(self):
-        return(f"Id: {self.shrimps_id} Name: {self.name}")
+        return(f"<Id: {self.shrimp_id} Name: {self.name}>")
 
 
 def connect_to_db(app):
