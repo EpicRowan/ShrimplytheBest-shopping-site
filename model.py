@@ -9,6 +9,12 @@ class User(db.model):
     __tablename__ = "users"
 
     user_id = db.Column(db.Integer, autoincrement = True, primarykey=True)
+    email = db.Column(db.String(64), nullable = True)
+    password = db.Column(db.String(64), nullable = True)
+
+    def __repr__(self):
+        return(f"Id: {self.user_id} email: {self.email}")
+
 
 def connect_to_db(app):
     """Connect the database to our Flask app."""
