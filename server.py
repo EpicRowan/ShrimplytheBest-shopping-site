@@ -12,3 +12,8 @@ app = Flask(__name__)
 app.secret_key = "supersecret"
 
 app.jinja_env.undefined = StrictUndefined
+
+@app.route("/")
+def home_route():
+
+	render_template("homepage.html")
