@@ -58,7 +58,7 @@ def show_shopping_cart():
 
 		shrimps = shrimp.get_by_id(shrimp_id)
 		cost = shrimps.price
-		order_total += cost
+		
 
 		total_cost = quantity * shrimps.price
 		order_total += total_cost
