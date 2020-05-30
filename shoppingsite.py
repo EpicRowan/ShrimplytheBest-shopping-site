@@ -53,6 +53,7 @@ def show_shopping_cart():
 
 	cart = session.get("cart", {})
 
+
 	for shrimp_id, quantity in cart.items():
 
 		shrimps = shrimp.get_by_id(shrimp_id)

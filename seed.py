@@ -10,3 +10,15 @@ def load_users(file_name):
 		db.session.add(user)
 
 	db.session.commit(user)
+
+
+def load_shrimp(file_name):
+
+	for i, row in enumerate(open(filename)):
+		row = row.rstrip()
+
+		shrimp = Shrimp()
+
+		db.session.add(shrimp)
+
+	db.session.commit(shrimp)
