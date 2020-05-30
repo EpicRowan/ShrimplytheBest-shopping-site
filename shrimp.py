@@ -37,8 +37,7 @@ def read_shrimp_from_file(filepath):
 			(shrimp_id,
 			name,
 			price,
-			image_url,
-			) = line.strip().split("|")
+			image_url) = line.strip().split("|")
 
 			price = float(price)
     
