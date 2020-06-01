@@ -17,14 +17,14 @@
                 <tr>
                     <td>{{ shrimp.name }}</td>
                     <td>{{ shrimp.quantity }}</td>
-                    <td>{{ shrimp.price }}</td>
-                    <td>{{shrimp.quantity * shrimp.price}}</td>
+                    <td>${{ shrimp.price }}0</td>
+                    <td>${{shrimp.quantity * shrimp.price}}0</td>
                 </tr>
             </tbody>
         {% endfor %}
     </table>
 
-    <h3>Total: {{order_total }}</h3>
+    <h3>Total: ${{order_total }}0</h3>
 
     <a href="/checkout" class="btn btn-large btn-primary">Check Out</a>
 
