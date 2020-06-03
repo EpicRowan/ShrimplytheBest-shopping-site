@@ -31,7 +31,7 @@ if __name__ == "__main__":
     connect_to_db(app)
     db.create_all()
 
-    user_filename = ""
-    shrimp_filename = ""
+    user_filename = "seed_data/users.txt"
+    shrimp_filename = "seed_data/shrimp.txt"
     load_users(user_filename)
     load_shrimp(shrimp_filename)
