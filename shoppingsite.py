@@ -111,7 +111,16 @@ def registration_form():
 
 @app.route("/register", methods = ["POST"])
 def register():
-	
+
+	email = request.form["email"]
+	password = request.form["password"]
+
+	new_user = User(username = username, password = password)
+
+	db.session.add(new_user)
+	db.session.commit(new_user)
+	return redirect("/")
+
 @app.route("/login", methods=["GET"])
 def show_login():
     """Show login form."""
