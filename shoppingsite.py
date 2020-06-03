@@ -104,6 +104,14 @@ def add_to_cart(shrimp_id):
     # Redirect to shopping cart page
     return redirect("/cart")
 
+@app.route("/register", methods = ["GET"])
+def registration_form():
+
+	return render_template("register.html")
+
+@app.route("/register", methods = ["POST"])
+def register():
+	
 @app.route("/login", methods=["GET"])
 def show_login():
     """Show login form."""
@@ -119,7 +127,8 @@ def login_process():
     email = request.form["email"]
     password = request.form["password"]
 
-    user = user.get_by_email(email)
+    # user = user.get_by_email(email)
+    user = User.query.filter_by(email=email).first()
 
     if not user:
         flash("No such user", 'error')
