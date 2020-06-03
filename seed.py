@@ -1,5 +1,8 @@
+from model import Shrimp, User, connect_to_db, db
+from server import app
 
-def load_users(file_name):
+
+def load_users(user_file_name):
 
 	for i, row in enumerate(open(file_name)):
 		row = row.rstrip()
@@ -12,7 +15,7 @@ def load_users(file_name):
 	db.session.commit(user)
 
 
-def load_shrimp(file_name):
+def load_shrimp(shrimp_file_name):
 
 	for i, row in enumerate(open(filename)):
 		row = row.rstrip()
@@ -22,3 +25,13 @@ def load_shrimp(file_name):
 		db.session.add(shrimp)
 
 	db.session.commit(shrimp)
+
+
+if __name__ == "__main__":
+    connect_to_db(app)
+    db.create_all()
+
+    user_filename = ""
+    shrimp_filename = ""
+    load_users(user_filename)
+    load_shrimp(shrimp_filename)
