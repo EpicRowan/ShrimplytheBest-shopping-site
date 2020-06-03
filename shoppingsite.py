@@ -136,8 +136,7 @@ def login_process():
     email = request.form["email"]
     password = request.form["password"]
 
-    # user = user.get_by_email(email)
-    user = User.query.filter_by(email=email).first()
+    user = user.get_by_email(email)
 
     if not user:
         flash("No such user", 'error')

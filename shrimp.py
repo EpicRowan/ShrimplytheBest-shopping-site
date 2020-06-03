@@ -60,4 +60,4 @@ def get_by_id(shrimp_id):
     return shrimp_types[shrimp_id]
 
 
-shrimp_types = read_shrimp_from_file("shrimp.txt")
+shrimp_types = read_shrimp_from_file("seed_data/shrimp.txt")
