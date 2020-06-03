@@ -107,7 +107,7 @@ def add_to_cart(shrimp_id):
 @app.route("/register", methods = ["GET"])
 def registration_form():
 
-	return render_template("register.html")
+	return render_template("register_form.html")
 
 @app.route("/register", methods = ["POST"])
 def register():
