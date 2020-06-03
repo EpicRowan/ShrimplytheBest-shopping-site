@@ -7,9 +7,6 @@ div.navbar-header img {
     margin-right: 7px;
 }
 
-img.melon-cart {
-    height: 15px;
-}
 
 
 img.shrimp-list {
@@ -19,14 +16,23 @@ img.shrimp-list {
   width: 150px;
 }
 
-div.pic img {
-    border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
+div.shrimp-summary img {
+    width: 15em;
 }
 
-div.melon-summary .price {
+/*div.well {
+    padding: 2px;
+}
+*/
+/*
+div.pic img {
+    border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 2px;
+  width: 150px;
+}*/
+
+div.shrimp-summary .price {
     margin: 0.5em 0;
     font-size: 150%;
     font-weight: bold;
